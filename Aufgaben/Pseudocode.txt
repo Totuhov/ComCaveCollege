@@ -10,7 +10,7 @@ class Kunde
  var LogOutTime;
 }
 
-Solange(TimeOut(Kunde) < 15 | der Benutzer abgemeldet sich selbst)
+Solange(TimeOut(Kunde) < 15 | der Benutzer meldet sich selbst ab)
 {
  Der Kunde hat zutritt zu seiner Dateien
 }
