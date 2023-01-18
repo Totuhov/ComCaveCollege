@@ -1,6 +1,6 @@
 
 Der Kunde wird eingeloggt
-var Kunde = neu Objekt von der Klasse User
+var Kunde = neu Objekt von der Klasse Kunde
 
 class Kunde
 {
