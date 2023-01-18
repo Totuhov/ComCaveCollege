@@ -1,0 +1,36 @@
+
+Der Kunde wird eingeloggt
+var Kunde = neu Objekt von der Klasse User
+
+class Kunde
+{
+ string Name = User();
+ var LoginDate = Date();
+ var LoginTime = Time();
+ var LogOutTime;
+}
+
+Solange(TimeOut(Kunde) < 15 | der Benutzer abgemeldet sich selbst)
+{
+ Der Kunde hat zutritt zu seiner Dateien
+}
+
+LogoutTime = TimeOut(Kunde)
+
+Speicher in XMLDatei.xml Kunde
+[
+<kunde>
+  <name> Name </name>
+  <loginZeit> LoginDate + LoginTime </loginZeit>
+  <logoutZeit> LogoutTime </logoutZeit>
+</kunde
+]
+
+LogOut(Kunde)
+
+
+
+   
+    
+
+     
