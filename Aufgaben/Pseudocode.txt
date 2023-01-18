@@ -23,7 +23,7 @@ Speicher in XMLDatei.xml Kunde
   <name> Name </name>
   <loginZeit> LoginDate + LoginTime </loginZeit>
   <logoutZeit> LogoutTime </logoutZeit>
-</kunde
+</kunde>
 ]
 
 LogOut(Kunde)
