@@ -1,0 +1,6 @@
+    'c' - Calculator
+-------------------------------
+    'h' - Help
+    'r' - Return
+'loops' - Loops Information C++
+  'end' - Exit

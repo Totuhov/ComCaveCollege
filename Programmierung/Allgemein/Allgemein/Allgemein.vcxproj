@@ -127,7 +127,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CalculatorClass.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="TestClass.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Help.txt" />
+    <Text Include="Loops.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CalculatorClass.h" />
+    <ClInclude Include="TestClass.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
