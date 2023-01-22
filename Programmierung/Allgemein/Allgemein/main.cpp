@@ -6,6 +6,7 @@
 #include <string>
 #include "TestClass.h"
 #include "CalculatorClass.h"
+#include "PasswordCreator.h"
 using namespace std;
 
 class Start
@@ -13,87 +14,10 @@ class Start
 public:
 	void Info()
 	{
-		cout << "Welcome to c++" << endl;
-		cout << "Tip: you can use 'h' for help\n\n";
+		cout << "Willkommen bei c++" << endl;
+		cout << "Tipp: Sie können 'h' für Hilfe verwenden\n\n";
 	}
 };
-
-//class Calculator
-//{
-//public:
-//	void Calculate()
-//	{
-//		string again;
-//		double result = 0;
-//
-//		string error1 = "You can use only numbers to calculate!\n";
-//		string error2 = "Invalid operator!\n";
-//
-//		cout << "<< Calculator >>\n\n" << "available operators: + - * /\n\n";
-//
-//		while (again != "y")
-//		{
-//
-//			cout << "first number: ";
-//			string one; cin >> one;
-//
-//			if (!is_number(one))
-//			{
-//				cout << error1;
-//				continue;
-//			}
-//
-//			cout << "operator: ";
-//			char op; cin >> op;
-//
-//			if (op != '+' && op != '-' && op != '*' && op != '/')
-//			{
-//				cout << error2;
-//				continue;
-//			}
-//
-//			cout << "second number: ";
-//			string  two; cin >> two;
-//
-//			if (!is_number(two))
-//			{
-//				cout << error1;
-//				continue;
-//			}
-//
-//			if (op == '/' && stod(two) == 0)
-//			{
-//				cout << "Cannot divide by 0\n";
-//				continue;
-//			}
-//
-//			switch (op)
-//			{
-//			case '+':
-//				result = stod(one) + stod(two);
-//				break;
-//			case '-':
-//				result = stod(one) - stod(two);
-//				break;
-//			case '*':
-//				result = stod(one) * stod(two);
-//				break;
-//			default:
-//				result = stod(one) / stod(two);
-//			}
-//
-//			cout << one << " " << op << " " << two << " = " << result << endl;
-//
-//			cout << "Exit Calculator? y/n\n";
-//			cin >> again;
-//		}
-//	}
-//	bool is_number(const string& s)
-//	{
-//		long double ld;
-//		return((std::istringstream(s) >> ld >> std::ws).eof());
-//	}
-//};
 
 
 int main()
@@ -120,7 +44,7 @@ int main()
 				myfile.close();
 			}
 
-			else cout << "Unable to open file";
+			else cout << "Datei kann nicht geöffnet werden";
 		}
 		else if (input == "c")
 		{
@@ -140,7 +64,13 @@ int main()
 				myfile.close();
 			}
 
-			else cout << "Unable to open file";
+			else cout << "Datei kann nicht geöffnet werden";
+		}
+		else if (input == "p")
+		{
+			PasswordCreator create;
+			cout << create.CreatePassword() << endl;
+
 		}
 		else if (input == "test")
 		{
@@ -149,7 +79,7 @@ int main()
 		}
 	}
 
-	cout << "\nGoodbye!\n";
+	cout << "\nAuf Wiedersehen!\n";
 	return(0);
 }
 

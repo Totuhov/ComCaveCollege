@@ -1,6 +1,7 @@
     'c' - Calculator
--------------------------------
-    'h' - Help
+    'p' - Passwort-Ersteller
+----------------------------
+    'h' - Hilfe
     'r' - Return
 'loops' - Loops Information C++
-  'end' - Exit
+  'end' - Programmende

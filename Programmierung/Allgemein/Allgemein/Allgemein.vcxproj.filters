@@ -24,6 +24,9 @@
     <ClCompile Include="CalculatorClass.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="PasswordCreator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Loops.txt">
@@ -32,12 +35,18 @@
     <Text Include="Help.txt">
       <Filter>Source Files</Filter>
     </Text>
+    <Text Include="Passwords.txt">
+      <Filter>Source Files</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TestClass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CalculatorClass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PasswordCreator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -22,7 +22,7 @@ for (int i = 1; i <= 2; ++i) {
 
 ---The foreach Loop---
 
-There is also a "for-each loop" (introduced in C++ version 11 
+* There is also a "for-each loop" (introduced in C++ version 11 
 (2011), which is used exclusively to loop through elements in 
 an array (or other data sets):
 

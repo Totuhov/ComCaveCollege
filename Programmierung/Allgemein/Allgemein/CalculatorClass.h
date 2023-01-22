@@ -16,16 +16,19 @@ public:
 		string again;
 		double result = 0;
 
-		string error1 = "You can use only numbers to calculate!\n";
-		string error2 = "Invalid operator!\n";
-		string error3 = "Cannot divide by 0\n";
+		string error1 = "Sie können nur mit Zahlen rechnen!\n";
+		string error2 = "Ungültiger Operator!\n";
+		string error3 = "Kann nicht durch 0 geteilt werden\n";
 
-		cout << "<< Calculator >>\n\n" << "available operators: + - * /\n\n";
+		cout << " --------------\n";
+		cout << " | Calculator |\n";
+		cout << " --------------\n";
+		cout << "verfügbare Operatoren: + - * /\n\n";
 
 		while (again != "y")
 		{
 
-			cout << "first number: ";
+			cout << "Erste Zahl: ";
 			string one; cin >> one;
 
 			if (!is_number(one))
@@ -43,7 +46,7 @@ public:
 				continue;
 			}
 
-			cout << "second number: ";
+			cout << "zweite Zahl: ";
 			string  two; cin >> two;
 
 			if (!is_number(two))
@@ -75,12 +78,12 @@ public:
 
 			cout << one << " " << op << " " << two << " = " << result << endl;
 
-			cout << "Exit Calculator? y/n\n";
+			cout << "Calculator verlassen?? y/n\n";
 			cin >> again;
 
 			while (again != "y" && again != "n")
 			{
-				cout << "'y' for exit OR 'n' to continue calculation\n";
+				cout << "'y' zum Beenden ODER 'n' zum Fortsetzen der Berechnung\n";
 				cin >> again;
 			}
 		}
