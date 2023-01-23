@@ -27,6 +27,15 @@
     <ClCompile Include="PasswordCreator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="zahlenratten.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="hilfe.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="random_number.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Help.txt">
@@ -38,6 +47,12 @@
     <Text Include="Passwords.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="games.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="zahlenraten_resultatent.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="info.h">
@@ -47,6 +62,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PasswordCreator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="zahlenratten.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hilfe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="random_number.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

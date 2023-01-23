@@ -128,19 +128,27 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CalculatorClass.cpp" />
+    <ClCompile Include="hilfe.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PasswordCreator.cpp" />
     <ClCompile Include="info.cpp" />
+    <ClCompile Include="random_number.cpp" />
+    <ClCompile Include="zahlenratten.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="games.txt" />
     <Text Include="Help.txt" />
     <Text Include="Loops.txt" />
     <Text Include="Passwords.txt" />
+    <Text Include="zahlenraten_resultatent.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CalculatorClass.h" />
+    <ClInclude Include="hilfe.h" />
     <ClInclude Include="PasswordCreator.h" />
     <ClInclude Include="info.h" />
+    <ClInclude Include="random_number.h" />
+    <ClInclude Include="zahlenratten.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

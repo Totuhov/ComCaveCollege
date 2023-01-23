@@ -1,7 +1,8 @@
-    'c' - Calculator
-    'p' - Passwort-Ersteller
-----------------------------
-    'h' - Hilfe
-    'r' - Return
-'loops' - Loops Information C++
-  'end' - Programmende
+     'c' - Calculator
+     'p' - Passwort-Ersteller
+'spiele' - Spiele
+--------------------------------
+     'h' - Hilfe
+     'r' - Return
+ 'loops' - Loops Information C++
+   'end' - Programmende

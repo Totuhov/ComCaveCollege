@@ -20,7 +20,7 @@ public:
 
 		for (size_t i = 0; i < length; i++)
 		{
-			r = 33 + (rand() % 94);
+			r = 33 + (rand() % 93);
 			password += char(r);
 		}
 

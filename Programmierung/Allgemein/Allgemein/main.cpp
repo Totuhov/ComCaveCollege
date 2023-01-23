@@ -7,9 +7,10 @@
 #include "info.h"
 #include "CalculatorClass.h"
 #include "PasswordCreator.h"
+#include "hilfe.h"
+#include "zahlenratten.h"
+#include "random_number.h"
 using namespace std;
-
-
 
 
 int main()
@@ -20,24 +21,25 @@ int main()
 
 	while (input != "end")
 	{
-		cout << "->";
+		cout << "/main->";
 		cin >> input;
 
 		if (input == "h")
 		{
-			string line;
-			ifstream myfile("Help.txt");
-			if (myfile.is_open())
-			{
-				while (getline(myfile, line))
-				{
-					cout << line << '\n';
-				}
-				myfile.close();
-			}
-
-			else cout << "Datei kann nicht geöffnet werden";
+			hilfe();
 		}
+		else if (input == "t")
+		{
+			for (size_t i = 0; i < 1000; i++)
+			{
+				int a = random_number(1, 100);
+				if (a > 100)
+					cout << a << " !!!!!!!!!!\n";
+				else
+					cout << a << endl;
+			}
+		}
+
 		else if (input == "c")
 		{
 			CalculatorClass calc;
@@ -64,9 +66,45 @@ int main()
 			cout << create.CreatePassword() << endl;
 
 		}
-		
-	}
+		else if (input == "spiele")
+		{
+			string game;
+			string line;
+			ifstream myfile("games.txt");
+			if (myfile.is_open())
+			{
+				while (getline(myfile, line))
+				{
+					cout << line << '\n';
+				}
+				myfile.close();
+			}
 
+			else cout << "Datei kann nicht geöffnet werden";
+
+			cout << "main/spiele->";
+			cin >> game;
+
+			while (game != "r")
+			{
+				if (game == "z")
+				{
+					zahlenratten();
+
+					cout << "main/spiele->";
+					cin >> game;
+				}
+				else if (game == "h")
+				{
+					hilfe();
+					cout << "main/spiele->";
+					cin >> game;
+				}
+
+			}
+		}
+
+	}
 	cout << "\nAuf Wiedersehen!\n";
 	return(0);
 }
