@@ -4,26 +4,18 @@
 #include <set>
 #include <fstream>
 #include <string>
-#include "TestClass.h"
+#include "info.h"
 #include "CalculatorClass.h"
 #include "PasswordCreator.h"
 using namespace std;
 
-class Start
-{
-public:
-	void Info()
-	{
-		cout << "Willkommen bei c++" << endl;
-		cout << "Tipp: Sie können 'h' für Hilfe verwenden\n\n";
-	}
-};
+
 
 
 int main()
 {
-	Start start;
-	start.Info();
+	info_message();
+
 	string input;
 
 	while (input != "end")
@@ -34,7 +26,7 @@ int main()
 		if (input == "h")
 		{
 			string line;
-			ifstream myfile("C:\\Users\\CC-Student\\Documents\\GitHub\\ComCaveCollege\\Programmierung\\Allgemein\\Allgemein\\Help.txt");
+			ifstream myfile("Help.txt");
 			if (myfile.is_open())
 			{
 				while (getline(myfile, line))
@@ -72,11 +64,7 @@ int main()
 			cout << create.CreatePassword() << endl;
 
 		}
-		else if (input == "test")
-		{
-			TestClass test = TestClass();
-			cout << test.Message();
-		}
+		
 	}
 
 	cout << "\nAuf Wiedersehen!\n";

@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{1acd5f57-65c7-4b50-88cb-fc155961a76f}</ProjectGuid>
-    <RootNamespace>Allgemein</RootNamespace>
+    <ProjectGuid>{480411a3-93fb-4854-93b1-8cdb87567c77}</ProjectGuid>
+    <RootNamespace>Unterprogramme</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,20 +127,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CalculatorClass.cpp" />
+    <ClCompile Include="funk.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="PasswordCreator.cpp" />
-    <ClCompile Include="info.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="Help.txt" />
-    <Text Include="Loops.txt" />
-    <Text Include="Passwords.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="CalculatorClass.h" />
-    <ClInclude Include="PasswordCreator.h" />
-    <ClInclude Include="info.h" />
+    <ClInclude Include="funk.h" />
+    <ClInclude Include="rechnungsarten.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

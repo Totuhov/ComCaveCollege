@@ -18,35 +18,15 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="info.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CalculatorClass.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="PasswordCreator.cpp">
+    <ClCompile Include="funk.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="Help.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
-    <Text Include="Loops.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
-    <Text Include="Passwords.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="info.h">
+    <ClInclude Include="rechnungsarten.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CalculatorClass.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PasswordCreator.h">
+    <ClInclude Include="funk.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

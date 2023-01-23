@@ -1,5 +1,6 @@
-
-Here are the most common used loops in c++
+--------------------------------------------
+|Here are the most common used loops in c++|
+--------------------------------------------
 
 ---Wile Loop---
 
