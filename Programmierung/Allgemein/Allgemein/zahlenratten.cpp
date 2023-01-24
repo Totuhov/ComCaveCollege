@@ -13,9 +13,9 @@ using namespace std;
 
 void zahlenratten()
 {
-	string results[5];
-	string names[5];
 	string name;
+	cout << "Geben Sie Ihre Name ein: ";
+	cin >> name;
 
 	int punkte = 100;
 
@@ -29,11 +29,7 @@ void zahlenratten()
 
 	while (true)
 	{
-		cout << ratten;
-		cin >> eingabe;
-
 		ofstream myfile;
-
 		myfile.open("zahlenraten_resultatent.txt", fstream::app);
 
 		if (myfile.is_open())
@@ -41,8 +37,12 @@ void zahlenratten()
 			auto start = std::chrono::system_clock::now();
 			auto legacyStart = std::chrono::system_clock::to_time_t(start);
 			ctime_s(tmBuff, sizeof(tmBuff), &legacyStart);
-			myfile << "start " << tmBuff;
 		}
+
+		cout << ratten;
+		cin >> eingabe;
+
+		myfile << eingabe << ", ";
 
 		while (r != eingabe)
 		{
@@ -67,14 +67,6 @@ void zahlenratten()
 				continue;
 			}
 		}
-		std::ifstream input_file("zahlenraten_resultatent.txt");
-
-		std::string line;
-		while (getline(input_file, line))
-		{
-			results.push_back(line);
-		}
-
 		{
 			/*
 
@@ -98,12 +90,17 @@ void zahlenratten()
 				myfile  << i << " Punkte - " << name << "\n";
 			}*/
 		}
-		myfile << "( "<< eingabe << " )" << endl << "ende " << tmBuff << endl;
+		myfile << "( "<< eingabe << " )" << endl << tmBuff << "Spieler - " 
+			<< name << " / Punkte - " << punkte << endl;
+
 		if (myfile.is_open())
 		{
 			myfile.close();
 		}
-		cout << "Die Zahl ist gleich " << eingabe << endl;
+		cout << "Die Zahl ist gleich " << eingabe << endl << endl;
+
+		result();
+		
 		cout << "Noch einmal spielen (j/n)? ";
 
 		string nochEine; cin >> nochEine;
@@ -112,7 +109,7 @@ void zahlenratten()
 		{
 			continue;
 		}
-		else if (nochEine == "n")
+		else
 		{
 			break;
 		}
