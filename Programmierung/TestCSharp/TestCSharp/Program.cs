@@ -15,11 +15,19 @@ namespace TestCSharp
 
         static void Main()
         {
-            int a = 1, b = 2;
 
-            Tausch(ref a, ref b);
-        }
 
-        
+            int i = 8;
+
+            int j = 3;
+
+            double d = i / j;
+
+
+
+            Console.WriteLine(d);
+
+
+        }        
     }
 }
