@@ -36,6 +36,9 @@
     <ClCompile Include="random_number.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="hanoi.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Help.txt">
@@ -44,7 +47,7 @@
     <Text Include="Loops.txt">
       <Filter>Resource Files</Filter>
     </Text>
-    <Text Include="Passwords.txt">
+    <Text Include="passwords.txt">
       <Filter>Resource Files</Filter>
     </Text>
     <Text Include="games.txt">
@@ -71,6 +74,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="random_number.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hanoi.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

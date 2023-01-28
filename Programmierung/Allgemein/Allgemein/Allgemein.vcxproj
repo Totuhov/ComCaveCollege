@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CalculatorClass.cpp" />
+    <ClCompile Include="hanoi.cpp" />
     <ClCompile Include="hilfe.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PasswordCreator.cpp" />
@@ -139,11 +140,12 @@
     <Text Include="games.txt" />
     <Text Include="Help.txt" />
     <Text Include="Loops.txt" />
-    <Text Include="Passwords.txt" />
+    <Text Include="passwords.txt" />
     <Text Include="zahlenraten_resultatent.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CalculatorClass.h" />
+    <ClInclude Include="hanoi.h" />
     <ClInclude Include="hilfe.h" />
     <ClInclude Include="PasswordCreator.h" />
     <ClInclude Include="info.h" />

@@ -34,7 +34,7 @@ public:
 			cin >> name;
 
 			ofstream myfile;
-			myfile.open("Passwords.txt", fstream::app);
+			myfile.open("passwords.txt", fstream::app);
 			string output = name + " - " + password + "\n";
 
 			if (myfile.is_open())

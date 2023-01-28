@@ -10,6 +10,7 @@
 #include "hilfe.h"
 #include "zahlenratten.h"
 #include "random_number.h"
+#include "hanoi.h"
 using namespace std;
 
 
@@ -70,6 +71,8 @@ int main()
 		{
 			string game;
 			string line;
+			string main = "main/spiele->";
+
 			ifstream myfile("games.txt");
 			if (myfile.is_open())
 			{
@@ -82,7 +85,7 @@ int main()
 
 			else cout << "Datei kann nicht geöffnet werden";
 
-			cout << "main/spiele->";
+			cout << main;
 			cin >> game;
 
 			while (game != "r")
@@ -91,13 +94,19 @@ int main()
 				{
 					zahlenratten();
 
-					cout << "main/spiele->";
+					cout << main;
+					cin >> game;
+				}
+				else if (game == "t")
+				{
+					hanoi();
+					cout << main;
 					cin >> game;
 				}
 				else if (game == "h")
 				{
 					hilfe();
-					cout << "main/spiele->";
+					cout << main;
 					cin >> game;
 				}
 

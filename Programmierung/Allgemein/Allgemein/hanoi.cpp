@@ -113,7 +113,7 @@ void bewegen()
 		Ziel = true;
 }
 
-int main()
+int hanoi()
 {
 	// Array Hanoi deklarieren
 	// 3 Positionen
@@ -132,6 +132,8 @@ int main()
 	// true:  Ziel erreicht
 	// bool Ziel = false;
 
+	std::cout << "Ziel des Spiels ist es, den kompletten Scheiben-Stapel vom linken Stab auf den rechten Stab zu versetzen.\n\n";
+
 	do
 	{
 		// Aufruf
@@ -144,7 +146,7 @@ int main()
 	ausgeben();
 
 	// Ausgabe des Glückwunsches
-	std::cout << "\nGlückwunsch. Du hast das Ziel erreicht.\n\n";
+	std::cout << "\nGlueckwunsch. Du hast das Ziel erreicht.\n\n";
 
 
 	return 0;

@@ -1,3 +1,4 @@
 
 'z' - Zahlenraten // zum Erraten einer ganzen Zahl zwischen 1 und 100
+'t' - Tuerme von Hanoi mit 3 Scheiben
 
