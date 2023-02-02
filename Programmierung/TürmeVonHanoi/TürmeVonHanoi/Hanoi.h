@@ -1,4 +1,5 @@
 #pragma once
+
 class Hanoi
 {
 	char hanoi[3][3] = { {'A', ' ', ' '},
