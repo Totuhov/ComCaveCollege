@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{c5cd31a9-d972-4193-8e69-3ea30e7f680b}</ProjectGuid>
-    <RootNamespace>TürmeVonHanoi</RootNamespace>
+    <ProjectGuid>{4332729b-e786-4d61-a218-0c15a25db0a1}</ProjectGuid>
+    <RootNamespace>AufgabeVererbung2</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,11 +127,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Hanoi.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="AEler.cpp" />
+    <ClCompile Include="FIsi.cpp" />
+    <ClCompile Include="ITStudent.cpp" />
+    <ClCompile Include="maincpp.cpp" />
+    <ClCompile Include="MultimediaStudent.cpp" />
+    <ClCompile Include="Student.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Hanoi.h" />
+    <ClInclude Include="AEler.h" />
+    <ClInclude Include="FIsi.h" />
+    <ClInclude Include="ITStudent.h" />
+    <ClInclude Include="MultimediaStudent.h" />
+    <ClInclude Include="Student.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
