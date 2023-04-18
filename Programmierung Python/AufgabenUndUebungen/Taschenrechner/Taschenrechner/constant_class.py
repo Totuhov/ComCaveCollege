@@ -19,3 +19,7 @@ class Constant:
     @staticmethod
     def button_width():
         return 3
+    
+    @staticmethod
+    def button_C_colotr():
+        return "#99ff99"
