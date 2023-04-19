@@ -22,4 +22,4 @@ class Constant:
     
     @staticmethod
     def button_C_colotr():
-        return "#99ff99"
+        return "#94d6a6"

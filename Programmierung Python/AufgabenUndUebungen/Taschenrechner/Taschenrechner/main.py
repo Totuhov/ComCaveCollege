@@ -62,47 +62,51 @@ def print_result(result, secondOperator):
         secondOperator = ""
     label2.config(text=secondOperator)
     label3.config(text="")
+    labelWarnings.config(text="")
 
 
 def command_on_click(text):
-    global labelMaxLength
-    label1_text = label1.cget("text")  # get current text of the label
+    label1_text = label1.cget("text")  # get current text of all lables
     label2_text = label2.cget("text")
     label3_text = label3.cget("text")
+    labelWarnings_text = labelWarnings.cget("text")
 
-    #if len(labelResult_text) > 0:
-    #    return
+    if labelWarnings_text == "not possible":
+        change_label_clear()
+        return
+    # with this check first number will be overwriten if it's 0
+    if len(label2_text) == 0 and label1_text == "0" and containing_numbers(text):
+        # there is no possibility to write something like 01 or 003
+        label1.config(text=text)
+        # the zero in the beginning will be ignored and not shown on the screen
+        return
+    # the same with the second operand
+    if len(label2_text) > 0 and label3_text == "0" and containing_numbers(text):
+        label3.config(text=text)
+        return
 
-    if len(label2_text) == 0:
-        if text == u"\u00F7":  # /
-            label2.config(text=u"\u00F7")
-            if label1_text == "":
-                label1.config(text="0")
-            return
-        if text == u"\u00D7":  # X
-            label2.config(text=u"\u00D7")
-            if label1_text == "":
-                label1.config(text="0")
-            return
-        if text == u"\u002D":  # -
-            label2.config(text=u"\u002D")
-            if label1_text == "":
-                label1.config(text="0")
-            return
-        if text == u"\u002B":  # +
-            label2.config(text=u"\u002B")
-            if label1_text == "":
-                label1.config(text="0")
-            return
+    # Check if allreagy has a operator and set or replace it if not
+    if len(label3_text) == 0 and (text == u"\u00F7" or text == u"\u00D7" or text == u"\u002D" or text == u"\u002B"):
+        label2.config(text=text)
+        return
 
     if text == u"\u00B1":  # -/+
         if len(label2_text) != 0:
+            if label3_text == "":           # check if there is a text in the field end if not did not let to take negative sign
+                return
+            # check if there is a number equal to zero in the field end if did not let to take negative sign
+            if Fraction(label3_text) == 0:
+                return
             if len(label3_text) > 0 and label3_text[0] == '-':
                 label3_text = label3_text[1:]
                 label3.config(text=label3_text)
             else:
                 label3.config(text="-" + label3_text)
         else:
+            if label1_text == "":
+                return
+            if Fraction(label1_text) == 0:
+                return
             if len(label1_text) > 0 and label1_text[0] == '-':
                 label1_text = label1_text[1:]
                 label1.config(text=label1_text)
@@ -111,17 +115,18 @@ def command_on_click(text):
         return
 
 # Result =
-    if text == u"\u003D" or ((text == u"\u00F7" or text == u"\u00D7" or text == u"\u002D" or text == u"\u002B")  # =
-                             and (len(label1_text) > 0 and len(label2_text) > 0 and len(label3_text) > 0)):     # =
+    if text == u"\u003D" or ((text == u"\u00F7" or text == u"\u00D7" or text == u"\u002D" or text == u"\u002B")
+                             and (len(label2_text) > 0 and len(label3_text) > 0)):
 
-        if not containing_numbers(label1_text) or not containing_numbers(label3_text):
+        if not containing_numbers(label3_text):
             return
+        # both of the operants are parsed in floating point data type of Fraction
         num1 = Fraction(label1_text)
         num2 = Fraction(label3_text)
 
         if label2_text == u"\u00F7":  # /
-            if int(label3_text) == 0:
-                labelResult.config(
+            if Fraction(label3_text) == 0:
+                labelWarnings.config(
                     text="not possible")
                 return
 
@@ -141,8 +146,6 @@ def command_on_click(text):
             return
 
     if len(label2_text) > 0:
-        if not containing_numbers(text) and not containing_point(text):
-            return
         if len(label3_text) == 0 and text == ".":
             label3.config(text="0.")
             return
@@ -159,41 +162,40 @@ def command_on_click(text):
 
 
 def change_label_clear():
-    label1.config(text="")
+    label1.config(text="0")
     label2.config(text="")
     label3.config(text="")
-    labelResult.config(text="")
+    labelWarnings.config(text="")
 
 
 labelsFrame = tk.Frame(window)
 labelsFrame.pack(side=tk.TOP, pady=5)
 
 # Text Label 1
-label1 = tk.Label(window, text="",
-                  width=30, font=("Arial", 20), anchor="e")
-label1.pack(anchor=tk.N, pady=5, padx=20)
+label1 = tk.Label(window, text="0",
+                  width=30, font=("Arial", 20), anchor="e", bg="#dadde3")
+label1.pack(anchor=tk.N, pady=0, padx=20)
 
-# Text Label 2
+# Text Label 2 operator
 label2 = tk.Label(window, text="",
-                  width=30, font=("Arial", 20), anchor="e")
-label2.pack(anchor=tk.N, pady=5, padx=20)
+                  width=30, font=("Arial", 20), anchor="e", bg="#dadde3")
+label2.pack(anchor=tk.N, pady=0, padx=20)
 
 # Text Label 3
 label3 = tk.Label(window, text="",
-                  width=30, font=("Arial", 20), anchor="e")
-label3.pack(anchor=tk.N, pady=5, padx=20)
+                  width=30, font=("Arial", 20), anchor="e", bg="#dadde3")
+label3.pack(anchor=tk.N, pady=0, padx=20)
 
-# Text Label Result
-labelResult = tk.Label(window, text="",
-                       width=30, font=("Arial", 20), anchor="e")
-labelResult.pack(anchor=tk.N, pady=5, padx=20)
+# Text Label Warnings
+labelWarnings = tk.Label(window, text="",
+                         width=30, font=("Arial", 20), anchor="e", bg="#dadde3")
+labelWarnings.pack(anchor=tk.N, pady=0, padx=20)
 
 # Buttons Grid
 buttonsFrame = tk.Frame(window)
-buttonsFrame.pack(side=tk.BOTTOM, pady=25)
+buttonsFrame.pack(side=tk.BOTTOM, pady=20)
 
 # Button 1
-
 button1 = tk.Button(buttonsFrame, text="1", command=lambda: command_on_click(
     "1"), width=Constant.button_width(), bg=Constant.numbersColor(), font=("Arial", 20), height=Constant.button_height())
 button1.grid(row=2, column=0)
