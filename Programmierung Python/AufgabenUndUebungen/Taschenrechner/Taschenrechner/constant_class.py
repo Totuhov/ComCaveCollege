@@ -22,4 +22,11 @@ class Constant:
     
     @staticmethod
     def button_C_colotr():
-        return "#94d6a6"
+        return "#94d6a6"   
+    
+    number_button_options = {
+        "width": button_width(),
+        "bg": numbersColor(),
+        "font": ("Arial", 20),
+        "height": button_height()
+    }

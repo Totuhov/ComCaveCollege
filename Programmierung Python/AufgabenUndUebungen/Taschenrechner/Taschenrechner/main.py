@@ -65,6 +65,22 @@ def print_result(result, secondOperator):
     labelWarnings.config(text="")
 
 
+def change_label_clear():
+    label1.config(text="0")
+    clear_last_3_labels()
+
+
+def change_label_clear_with_text(text):
+    label1.config(text=text)
+    clear_last_3_labels()
+
+
+def clear_last_3_labels():
+    label2.config(text="")
+    label3.config(text="")
+    labelWarnings.config(text="")
+
+
 def command_on_click(text):
     label1_text = label1.cget("text")  # get current text of all lables
     label2_text = label2.cget("text")
@@ -72,7 +88,7 @@ def command_on_click(text):
     labelWarnings_text = labelWarnings.cget("text")
 
     if labelWarnings_text == "not possible":
-        change_label_clear()
+        change_label_clear_with_text(label1_text)
         return
     # with this check first number will be overwriten if it's 0
     if len(label2_text) == 0 and label1_text == "0" and containing_numbers(text):
@@ -92,7 +108,8 @@ def command_on_click(text):
 
     if text == u"\u00B1":  # -/+
         if len(label2_text) != 0:
-            if label3_text == "":           # check if there is a text in the field end if not did not let to take negative sign
+            # check if there is a text in the field and if not did not let to take negative sign
+            if label3_text == "":          
                 return
             # check if there is a number equal to zero in the field end if did not let to take negative sign
             if Fraction(label3_text) == 0:
@@ -161,53 +178,43 @@ def command_on_click(text):
             label1.config(text=label1_text + text)
 
 
-def change_label_clear():
-    label1.config(text="0")
-    label2.config(text="")
-    label3.config(text="")
-    labelWarnings.config(text="")
-
-
-labelsFrame = tk.Frame(window)
-labelsFrame.pack(side=tk.TOP, pady=5)
+labelsFrame = tk.Frame(window, bg="white")
+labelsFrame.pack(side=tk.TOP, pady=15)
 
 # Text Label 1
-label1 = tk.Label(window, text="0",
+label1 = tk.Label(labelsFrame, text="0",
                   width=30, font=("Arial", 20), anchor="e", bg="#dadde3")
 label1.pack(anchor=tk.N, pady=0, padx=20)
 
 # Text Label 2 operator
-label2 = tk.Label(window, text="",
+label2 = tk.Label(labelsFrame, text="",
                   width=30, font=("Arial", 20), anchor="e", bg="#dadde3")
 label2.pack(anchor=tk.N, pady=0, padx=20)
 
 # Text Label 3
-label3 = tk.Label(window, text="",
+label3 = tk.Label(labelsFrame, text="",
                   width=30, font=("Arial", 20), anchor="e", bg="#dadde3")
 label3.pack(anchor=tk.N, pady=0, padx=20)
 
 # Text Label Warnings
-labelWarnings = tk.Label(window, text="",
+labelWarnings = tk.Label(labelsFrame, text="",
                          width=30, font=("Arial", 20), anchor="e", bg="#dadde3")
 labelWarnings.pack(anchor=tk.N, pady=0, padx=20)
 
 # Buttons Grid
 buttonsFrame = tk.Frame(window)
-buttonsFrame.pack(side=tk.BOTTOM, pady=20)
+buttonsFrame.pack(side=tk.TOP, pady=10, anchor="ne", padx=20)
 
 # Button 1
-button1 = tk.Button(buttonsFrame, text="1", command=lambda: command_on_click(
-    "1"), width=Constant.button_width(), bg=Constant.numbersColor(), font=("Arial", 20), height=Constant.button_height())
+button1 = tk.Button(buttonsFrame, text="1", **Constant.number_button_options, command=lambda: command_on_click("1"))
 button1.grid(row=2, column=0)
 
 # Button 2
-button2 = tk.Button(buttonsFrame, text="2", command=lambda: command_on_click(
-    "2"), width=Constant.button_width(), bg=Constant.numbersColor(), font=("Arial", 20), height=Constant.button_height())
+button2 = tk.Button(buttonsFrame, text="2", **Constant.number_button_options, command=lambda: command_on_click("2"))
 button2.grid(row=2, column=1)
 
 # Button 3
-button3 = tk.Button(buttonsFrame, text="3", command=lambda: command_on_click(
-    "3"), width=Constant.button_width(), bg=Constant.numbersColor(), font=("Arial", 20), height=Constant.button_height())
+button3 = tk.Button(buttonsFrame, text="3", **Constant.number_button_options, command=lambda: command_on_click("3"))
 button3.grid(row=2, column=2)
 
 # Button /
@@ -221,18 +228,15 @@ buttonC = tk.Button(buttonsFrame, text="C", command=change_label_clear,
 buttonC.grid(row=0, column=4)
 
 # Button 4
-button4 = tk.Button(buttonsFrame, text="4", command=lambda: command_on_click(
-    "4"), width=Constant.button_width(), bg=Constant.numbersColor(), font=("Arial", 20), height=Constant.button_height())
+button4 = tk.Button(buttonsFrame, text="4", **Constant.number_button_options, command=lambda: command_on_click("4"))
 button4.grid(row=1, column=0)
 
 # Button 5
-button5 = tk.Button(buttonsFrame, text="5", command=lambda: command_on_click(
-    "5"), width=Constant.button_width(), bg=Constant.numbersColor(), font=("Arial", 20), height=Constant.button_height())
+button5 = tk.Button(buttonsFrame, text="5", **Constant.number_button_options, command=lambda: command_on_click("5"))
 button5.grid(row=1, column=1)
 
 # Button 6
-button6 = tk.Button(buttonsFrame, text="6", command=lambda: command_on_click(
-    "6"), width=Constant.button_width(), bg=Constant.numbersColor(), font=("Arial", 20), height=Constant.button_height())
+button6 = tk.Button(buttonsFrame, text="6", **Constant.number_button_options, command=lambda: command_on_click("6"))
 button6.grid(row=1, column=2)
 
 # Button X
@@ -246,18 +250,15 @@ buttonResult = tk.Button(buttonsFrame, text=u"\u003D", command=lambda: command_o
 buttonResult.grid(row=1, column=4, rowspan=3, ipady=40)
 
 # Button 7
-button7 = tk.Button(buttonsFrame, text="7", command=lambda: command_on_click(
-    "7"), width=Constant.button_width(), bg=Constant.numbersColor(), font=("Arial", 20), height=Constant.button_height())
+button7 = tk.Button(buttonsFrame, text="7", **Constant.number_button_options, command=lambda: command_on_click("7"))
 button7.grid(row=0, column=0)
 
 # Button 8
-button8 = tk.Button(buttonsFrame, text="8", command=lambda: command_on_click(
-    "8"), width=Constant.button_width(), bg=Constant.numbersColor(), font=("Arial", 20), height=Constant.button_height())
+button8 = tk.Button(buttonsFrame, text="8", **Constant.number_button_options, command=lambda: command_on_click("8"))
 button8.grid(row=0, column=1)
 
 # Button 9
-button9 = tk.Button(buttonsFrame, text="9", command=lambda: command_on_click(
-    "9"), width=Constant.button_width(), bg=Constant.numbersColor(), font=("Arial", 20), height=Constant.button_height())
+button9 = tk.Button(buttonsFrame, text="9", **Constant.number_button_options, command=lambda: command_on_click("9"))
 button9.grid(row=0, column=2)
 
 # Button -
@@ -266,13 +267,12 @@ buttonMinus = tk.Button(buttonsFrame, text=u"\u002D", command=lambda: command_on
 buttonMinus.grid(row=2, column=3)
 
 # Button -/+
-buttonChange = tk.Button(buttonsFrame, text=u"\u00B1", command=lambda: command_on_click(
+buttonChange = tk.Button(buttonsFrame, text="+/-", command=lambda: command_on_click(
     u"\u00B1"), width=Constant.button_width(), bg=Constant.operatorsColor(), font=("Arial", 20), height=Constant.button_height())
 buttonChange.grid(row=3, column=0)
 
 # Button 0
-button0 = tk.Button(buttonsFrame, text="0", command=lambda: command_on_click(
-    "0"), width=Constant.button_width(), bg=Constant.numbersColor(), font=("Arial", 20), height=Constant.button_height())
+button0 = tk.Button(buttonsFrame, text="0", **Constant.number_button_options, command=lambda: command_on_click("0"))
 button0.grid(row=3, column=1)
 
 # Button .
@@ -284,5 +284,6 @@ buttonPoint.grid(row=3, column=2)
 buttonplus = tk.Button(buttonsFrame, text=u"\u002B", command=lambda: command_on_click(
     u"\u002B"), width=Constant.button_width(), bg=Constant.plusColor(), font=("Arial", 20), height=Constant.button_height())
 buttonplus.grid(row=3, column=3)
+
 
 window.mainloop()

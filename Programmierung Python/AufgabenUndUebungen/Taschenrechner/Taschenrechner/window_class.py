@@ -1,5 +1,6 @@
 import tkinter as tk
 import os
+from tkinter import Menu
 
 
 # 1.1 Get the path to the directory containing the script
@@ -16,8 +17,20 @@ class Window(tk.Tk):
         self.title("Taschenrechner v1.0")
         screen_width = self.winfo_screenwidth()
         screen_heigth = self.winfo_screenheight()
-        center_x = int(screen_width / 2 - 340 / 2)
-        center_y = int(screen_heigth / 2 - 480 / 2)
-        self.geometry(f"340x480+{center_x}+{center_y}")
+        center_x = int(screen_width / 2 - 330 / 2)
+        center_y = int(screen_heigth / 2 - 450 / 2)
+        self.geometry(f"330x450+{center_x}+{center_y}")
         self.resizable(False, False)
         self.iconbitmap(file_path)  # 1.3 insert the path to the file as string
+        self.configure(background="white")
+
+        menubar = Menu(self)
+        self.config(menu=menubar)
+
+        modeMenu = Menu(menubar, tearoff=0)
+        modeMenu.add_command(label="Binar Convertor")
+
+        menubar.add_cascade(label="Modes", menu=modeMenu, underline=0)
+
+        
+
