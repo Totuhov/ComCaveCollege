@@ -131,7 +131,7 @@ def command_on_click(text):
                 label1.config(text="-" + label1_text)
         return
 
-# Result =
+    # Result =
     if text == u"\u003D" or ((text == u"\u00F7" or text == u"\u00D7" or text == u"\u002D" or text == u"\u002B")
                              and (len(label2_text) > 0 and len(label3_text) > 0)):
 

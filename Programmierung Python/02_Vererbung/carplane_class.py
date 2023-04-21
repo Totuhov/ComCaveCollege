@@ -8,3 +8,5 @@ class Carplane(Plane, Car):
     def __str__(self):
         return f"Carplane:({self.speed})"
     
+    
+    
