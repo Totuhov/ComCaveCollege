@@ -10,3 +10,6 @@ Spieler - TestSpieler / Punkte - 94
 10, 50, 40, 45, ( 45 )
 Tue Jan 24 15:35:59 2023
 Spieler - NameTestSpieler / Punkte - 97
+34, 56, 66, 58, 57, ( 57 )
+Wed Jul 19 14:58:18 2023
+Spieler - Velizar / Punkte - 96
